@@ -8,7 +8,7 @@ var maxSubArray = function (nums) {
   let maxSubArraySum = nums[0]; // only one element case, eg: [1]
   for (let ind = 0; ind < nums.length; ind++) {
     sum += nums[ind];
-    maxSubArraySum = Math.max(maxSubArraySum, sum - minPrefixSum); // maxSubArramSum = sum - minPrefixSum
+    maxSubArraySum = Math.max(maxSubArraySum, sum - minPrefixSum); // maxSubArraySum = sum - minPrefixSum
     minPrefixSum = Math.min(minPrefixSum, sum);
   }
   return maxSubArraySum;
