@@ -1,0 +1,20 @@
+1. brune force solution
+O(n^2)
+```
+/**
+ * @param {number[]} nums
+ * @return {number[]}
+ */
+var runningSum = function(nums) {
+  return nums.map((num, ind, arr)=>{
+      return arr
+          .slice(0, ind+1)
+          .reduce((sum, ele)=>{
+          return sum += ele;
+      }, 0);
+  });
+};
+```
+
+2. O(n) solution
+`nums[i] = nums[i - 1] + nums[i];`
