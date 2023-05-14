@@ -1,0 +1,48 @@
+```javascript
+/**
+ * @param {number} num
+ * @return {number}
+ */
+var numberOfSteps = function(num) {
+  let times = 0;
+  while(num != 0){
+    if(num % 2 === 0){
+      num /= 2;
+    }else{
+      num -= 1;
+    }
+     times += 1;
+  }
+  return times;
+};
+```
+
+
+**思路与算法**
+
+将 numnum 与 11 进行位运算来判断 numnum 的奇偶性。
+
+记录操作次数时：
+
+- 如果 numnum 是奇数，我们需要加上一次减 11的操作。
+- 如果 num>1num>1，我们需要加上一次除以 22 的操作。
+
+然后使 numnum 的值变成 ⌊num2⌋⌊2num​⌋。重复以上操作直到 num=0num=0 时结束操作。
+
+**代码**
+    
+```c++
+____
+
+class Solution {
+public:
+    int numberOfSteps(int num) {
+        int ret = 0;
+        while (num) {
+            ret += (num > 1 ? 1 : 0) + (num & 0x01);
+            num >>= 1;
+        }
+        return ret;
+    }
+};
+```
